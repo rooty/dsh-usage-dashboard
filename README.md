@@ -1,5 +1,7 @@
 # Usage Dashboard for DeepSeek Harness
 
+**English** | [Русский](README.ru.md) | [Українська](README.uk.md)
+
 **DSH 0.2.2-rc.1**, plugin **0.1.1**. A separate user-owned extension; it does not modify the application archive, OAuth plugin, model configuration, credential store or billing.
 
 ## Interface
