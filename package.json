@@ -1,0 +1,25 @@
+{
+  "name": "@local/dsh-usage-dashboard",
+  "version": "0.1.1",
+  "private": true,
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/rooty/dsh-usage-dashboard.git" },
+  "type": "module",
+  "description": "Recorded own-session usage, conservative catalog estimates and a native Usage dashboard",
+  "engines": { "dsh": "0.2.2-rc.1" },
+  "exports": { ".": "./index.js", "./client": "./client.js", "./package.json": "./package.json", "./locale/*.json": "./locale/*.json", "./icon": "./icon.svg" },
+  "files": ["LICENSE", "THIRD_PARTY_NOTICES.md", "index.js", "reader.js", "fold.js", "metrics.js", "pricing.json", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md"],
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node --check index.js && node --check reader.js && node --check fold.js && node --check metrics.js && node --check client.js",
+    "test": "node --test *.test.js *.test.mjs",
+    "test:native": "ELECTRON_RUN_AS_NODE=1 \"/Applications/DeepSeek Harness.app/Contents/MacOS/DeepSeek Harness\" native-api.smoke.mjs"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web", "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-conversation", "@deepseek-ai/dsh-client-ui-sidebar", "@deepseek-ai/dsh-client-ui-layout", "@deepseek-ai/dsh-client-ui-session", "@deepseek-ai/dsh-client-locale"]
+    }
+  }
+}

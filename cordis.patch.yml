@@ -1,0 +1,4 @@
+- insert:
+    - id: local-usage-dashboard
+      name: '@local/dsh-usage-dashboard'
+      config: {}
